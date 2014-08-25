@@ -1,0 +1,6 @@
+---
+- homebrew: name=git state=latest
+
+- template: src=gitignore.j2 dest=~/.gitignore
+
+- template: src=gitconfig.j2 dest=~/.gitconfig

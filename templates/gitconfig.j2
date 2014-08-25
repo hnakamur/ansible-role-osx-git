@@ -1,0 +1,32 @@
+[user]
+	name = {{ git_user_name }}
+	email = {{ git_user_email }}
+[core]
+	excludesfile = {{ lookup('env', 'HOME') }}/.gitignore
+[merge]
+	ff = true
+[log]
+	date = local
+[push]
+	default = simple
+[alias]
+	a = add
+	co = checkout
+	ci = commit -v
+	b = branch
+	d = diff -w
+	di = diff
+	f = fetch --all --prune
+	l = log
+	me = merge
+	s = status -s
+	lga = log --graph --all --abbrev-commit --pretty=format:'%x09 %Cred%h%Creset %Cgreen%ai %C(bold blue)(%an) -%C(yellow)%d%Creset %s%Creset'
+	lg  = log --graph --abbrev-commit --pretty=format:'%x09 %Cred%h%Creset %Cgreen%ai %C(bold blue)(%an) -%C(yellow)%d%Creset %s%Creset'
+	conflicts = diff --name-only --diff-filter=U
+
+[pager]
+        log = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+        show = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+        diff = `brew --prefix git`/share/git-core/contrib/diff-highlight/diff-highlight | less
+[credential]
+	helper = osxkeychain
